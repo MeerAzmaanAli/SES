@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+/* Header Styles */
+header {
+    background: #70879b;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family:'Roboto';
+
+    img{
+        width: 60px;
+        height: 40px;
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'Montserrat';
+}
+
+.nav-links a:hover {
+    color: #000000;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.75)),
+                url('./media/hero.jpeg') center/cover;
+    height: 100vh;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(27, 27, 27);
+    padding: 0 1rem;
+    h1{
+        font-family:'Roboto';
+        letter-spacing: 50px;
+        
+        
+    }
+    p{
+        font-family:'Roboto';
+        letter-spacing: 20px;
+        font-size: 20px;        
+    }
+    
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    background: #00b4d8;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #0096c7;
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    
+
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+    background: #f8f9fa;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    p{
+        padding: 0.5rem;
+    }
+}
+
+/* Footer */
+footer {
+    background: #003366;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
