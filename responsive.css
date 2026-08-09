@@ -23,7 +23,7 @@ img,svg,iframe{max-width:100%}
   .section-head{margin-bottom:34px!important}.section-head h2{font-size:clamp(27px,7vw,38px)!important}
   .hero-grid,.about-grid,.contact-layout{gap:32px!important}
   .schematic-frame{max-width:620px;margin:auto}.stat-strip{max-width:none!important}
-  .svc-grid{grid-template-columns:repeat(2,1fr)!important}.svc-card{padding:26px 20px!important}
+  .svc-grid{grid-template-columns:repeat(2,1fr)!important}.svc-card{padding:0!important}.svc-body{padding:20px 18px 24px!important}
   .proj-grid{grid-template-columns:1fr!important}.proj-visual{height:180px!important}
   .blog-grid{gap:16px!important}.blog-card{min-height:0!important}
   .cta-band,.cta{padding:65px 0!important}.cta-inner{gap:20px!important}

@@ -222,12 +222,19 @@
   .services{border-top:1px solid var(--line);}
   .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
   .svc-card{
-    background:var(--bg);padding:34px 26px;position:relative;
+    background:var(--bg);position:relative;
     transition:background .3s ease;
+    display:flex;flex-direction:column;
+    overflow:hidden;padding:0;
   }
   .svc-card:hover{background:var(--bg-1);}
-  .svc-num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--red);margin-bottom:24px;}
-  .svc-icon{width:40px;height:40px;margin-bottom:22px;color:var(--blue);}
+  .svc-img-wrap{width:100%;height:180px;margin:0;padding:0;overflow:hidden;position:relative;background:var(--bg-1);border-bottom:1px solid var(--line);flex-shrink:0;}
+  .svc-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+  .svc-card:hover .svc-img{transform:scale(1.06);}
+  .svc-body{padding:24px 24px 28px;display:flex;flex-direction:column;flex:1;}
+  .svc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+  .svc-num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--red);margin-bottom:0;}
+  .svc-icon{width:32px;height:32px;color:var(--blue);margin-bottom:0;}
   .svc-icon svg{width:100%;height:100%;stroke:var(--blue);fill:none;stroke-width:1.4;}
   .svc-card h3{font-size:18px;margin-bottom:10px;}
   .svc-card p{font-size:13.5px;color:var(--ink-muted);}
@@ -471,52 +478,92 @@
     </div>
     <div class="svc-grid" data-reveal="stagger">
       <div class="svc-card">
-        <div class="svc-num">01</div>
-        <div class="svc-icon"><svg viewBox="0 0 40 40"><path d="M20 4C20 4 8 18 8 27C8 34 13.4 40 20 40C26.6 40 32 34 32 27C32 18 20 4 20 4Z"/></svg></div>
-        <h3>Fire &amp; Safety</h3>
-        <p>Detection, suppression, sprinkler networks, and code-compliant fire protection systems.</p>
+        <div class="svc-img-wrap"><img class="svc-img" src="public/media/services_images/fire.jpeg" alt="Fire &amp; Safety" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <div class="svc-num">01</div>
+            <div class="svc-icon"><svg viewBox="0 0 40 40"><path d="M20 4C20 4 8 18 8 27C8 34 13.4 40 20 40C26.6 40 32 34 32 27C32 18 20 4 20 4Z"/></svg></div>
+          </div>
+          <h3>Fire &amp; Safety</h3>
+          <p>Detection, suppression, sprinkler networks, and code-compliant fire protection systems.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <div class="svc-num">02</div>
-        <div class="svc-icon"><svg viewBox="0 0 40 40"><rect x="4" y="4" width="32" height="32" rx="3"/><circle cx="20" cy="20" r="10"/><path d="M20 6V14 M20 26V34 M6 20H14 M26 20H34"/></svg></div>
-        <h3>HVAC</h3>
-        <p>Heating, ventilation, and air conditioning engineered for load, airflow, and energy efficiency.</p>
+        <div class="svc-img-wrap"><img class="svc-img" src="public/media/services_images/hvac.jpeg" alt="HVAC" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <div class="svc-num">02</div>
+            <div class="svc-icon"><svg viewBox="0 0 40 40"><rect x="4" y="4" width="32" height="32" rx="3"/><circle cx="20" cy="20" r="10"/><path d="M20 6V14 M20 26V34 M6 20H14 M26 20H34"/></svg></div>
+          </div>
+          <h3>HVAC</h3>
+          <p>Heating, ventilation, and air conditioning engineered for load, airflow, and energy efficiency.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <div class="svc-num">03</div>
-        <div class="svc-icon"><svg viewBox="0 0 40 40"><rect x="4" y="4" width="32" height="32" rx="2"/><path d="M20 8V32 M8 14L32 26 M32 14L8 26"/></svg></div>
-        <h3>Cold Rooms &amp; Storage</h3>
-        <p>Refrigeration engineering and cold-chain infrastructure for storage and processing facilities.</p>
+        <div class="svc-img-wrap"><img class="svc-img" src="public/media/services_images/coldroom.jpeg" alt="Cold Rooms &amp; Storage" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <div class="svc-num">03</div>
+            <div class="svc-icon"><svg viewBox="0 0 40 40"><rect x="4" y="4" width="32" height="32" rx="2"/><path d="M20 8V32 M8 14L32 26 M38 16L10 32"/></svg></div>
+          </div>
+          <h3>Cold Rooms &amp; Storage</h3>
+          <p>Refrigeration engineering and cold-chain infrastructure for storage and processing facilities.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <div class="svc-num">04</div>
-        <div class="svc-icon"><svg viewBox="0 0 40 40"><path d="M4 4H34V14H22V36H14V14H4Z"/></svg></div>
-        <h3>Fabrication</h3>
-        <p>Custom ducting, structural steel, and metal fabrication built to project-specific drawings.</p>
+        <div class="svc-img-wrap"><img class="svc-img" src="public/media/services_images/fabrication.jpeg" alt="Fabrication" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <div class="svc-num">04</div>
+            <div class="svc-icon"><svg viewBox="0 0 40 40"><path d="M4 4H34V14H22V36H14V14H4Z"/></svg></div>
+          </div>
+          <h3>Fabrication</h3>
+          <p>Custom ducting, structural steel, and metal fabrication built to project-specific drawings.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <div class="svc-num">05</div>
-        <div class="svc-icon"><svg viewBox="0 0 40 40"><path d="M20 4C20 4 8 18 8 27C8 34 13.4 40 20 40C26.6 40 32 34 32 27C32 25 31 22.5 29.5 20 M14 27C14 30.3 16.7 33 20 33"/></svg></div>
-        <h3>Water Purification</h3>
-        <p>RO and filtration systems for domestic and industrial use, sized and installed to demand.</p>
+        <div class="svc-img-wrap"><img class="svc-img" src="public/media/services_images/ro.jpeg" alt="Water Purification" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <div class="svc-num">05</div>
+            <div class="svc-icon"><svg viewBox="0 0 40 40"><path d="M20 4C20 4 8 18 8 27C8 34 13.4 40 20 40C26.6 40 32 34 32 27C32 25 31 22.5 29.5 20 M14 27C14 30.3 16.7 33 20 33"/></svg></div>
+          </div>
+          <h3>Water Purification</h3>
+          <p>RO and filtration systems for domestic and industrial use, sized and installed to demand.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <div class="svc-num">06</div>
-        <div class="svc-icon"><svg viewBox="0 0 40 40"><rect x="6" y="4" width="28" height="32" rx="2"/><path d="M22 10 L14 24 H20 L16 36 L28 18 H22 Z"/></svg></div>
-        <h3>Electrical Works</h3>
-        <p>Electrical panel installation, load planning, and wiring for commercial and industrial sites.</p>
+        <div class="svc-img-wrap"><img class="svc-img" src="public/media/services_images/electrical.jpeg" alt="Electrical Works" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <div class="svc-num">06</div>
+            <div class="svc-icon"><svg viewBox="0 0 40 40"><rect x="6" y="4" width="28" height="32" rx="2"/><path d="M22 10 L14 24 H20 L16 36 L28 18 H22 Z"/></svg></div>
+          </div>
+          <h3>Electrical Works</h3>
+          <p>Electrical panel installation, load planning, and wiring for commercial and industrial sites.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <div class="svc-num">07</div>
-        <div class="svc-icon"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8"/><path d="M20 4V9 M20 31V36 M36 20H31 M9 20H4 M30.9 9.1L27.5 12.5 M12.5 27.5L9.1 30.9 M30.9 30.9L27.5 27.5 M12.5 12.5L9.1 9.1"/></svg></div>
-        <h3>Solar</h3>
-        <p>Solar panel installation and system design for domestic and industrial power needs.</p>
+        <div class="svc-img-wrap"><img class="svc-img" src="public/media/services_images/solar.jpeg" alt="Solar" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <div class="svc-num">07</div>
+            <div class="svc-icon"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="8"/><path d="M20 4V9 M20 31V36 M36 20H31 M9 20H4 M30.9 9.1L27.5 12.5 M12.5 27.5L9.1 30.9 M30.9 30.9L27.5 27.5 M12.5 12.5L9.1 9.1"/></svg></div>
+          </div>
+          <h3>Solar</h3>
+          <p>Solar panel installation and system design for domestic and industrial power needs.</p>
+        </div>
       </div>
       <div class="svc-card">
-        <div class="svc-num">08</div>
-        <div class="svc-icon"><svg viewBox="0 0 40 40"><path d="M14 14L6 20L14 26 M26 14L34 20L26 26 M23 10L17 30"/></svg></div>
-        <h3>IT — Software &amp; Applications</h3>
-        <p>Custom software and applications for internal operations and client-facing tools.</p>
+        <div class="svc-img-wrap"><img class="svc-img" src="public/media/services_images/it.jpeg" alt="IT — Software &amp; Applications" loading="lazy"></div>
+        <div class="svc-body">
+          <div class="svc-top">
+            <div class="svc-num">08</div>
+            <div class="svc-icon"><svg viewBox="0 0 40 40"><path d="M14 14L6 20L14 26 M26 14L34 20L26 26 M23 10L17 30"/></svg></div>
+          </div>
+          <h3>IT — Software &amp; Applications</h3>
+          <p>Custom software and applications for internal operations and client-facing tools.</p>
+        </div>
       </div>
     </div>
   </section>
