@@ -270,15 +270,10 @@
   .proj-card{background:var(--bg);overflow:hidden;position:relative;}
   .proj-visual{
     height:200px;position:relative;overflow:hidden;
-    background:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size:24px 24px;
     background-color:var(--bg-1);
-    display:flex;align-items:center;justify-content:center;
   }
-  .proj-visual svg{width:64px;height:64px;stroke:var(--blue);fill:none;stroke-width:1.2;transition:stroke .3s ease, transform .4s ease;}
-  .proj-card:hover .proj-visual svg{stroke:var(--red);transform:scale(1.08);}
+  .proj-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+  .proj-card:hover .proj-img{transform:scale(1.06);}
   .proj-meta{padding:24px 26px 28px;}
   .proj-tb{
     display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;

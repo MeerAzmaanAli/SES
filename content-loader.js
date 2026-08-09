@@ -19,7 +19,7 @@
   const setText = (selector, value) => { const el = $(selector); if (el && value) el.textContent = value; };
   const slugify = (value) => String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|$)/g, '');
   const page = location.pathname.split('/').pop() || 'index.html';
-  const esc = (value) => String(value).replace(/[&<>"']/g, char => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;' })[char]);
+  const esc = (value) => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[char]);
 
   document.querySelectorAll('a[href^="tel:"]').forEach(el => { el.href = `tel:${content.company.phoneHref}`; el.textContent = content.company.phone; });
   document.querySelectorAll('a[href^="mailto:"]').forEach(el => { el.href = `mailto:${content.company.email}`; el.textContent = content.company.email; });
@@ -60,9 +60,56 @@
       : `<article class="card svc-card">${imgHtml}${bodyHtml}</article>`;
   }).join('');
 
-  const projectCards = (home) => content.projects.map(project => home
-    ? `<a class="proj-card" href="project.html?project=${encodeURIComponent(project.slug || slugify(project.title))}"><div class="proj-visual">${esc(project.icon)}</div><div class="proj-meta"><div class="proj-tb"><span>${esc(project.discipline)}</span><span>${esc(project.location)}</span></div><h3>${esc(project.title)}</h3><p>${esc(project.summary)}</p></div></a>`
-    : `<a class="card project-card" href="project.html?project=${encodeURIComponent(project.slug || slugify(project.title))}"><div class="project-visual">${esc(project.icon)}</div><div class="card-copy"><div class="meta"><span>${esc(project.discipline)}</span><span>${esc(project.location)}</span></div><h3>${esc(project.title)}</h3><p>${esc(project.summary)}</p></div></a>`).join('');
+  // Local images from public/media/project-visuals — add more per discipline as you drop files in
+  const localProjectImgs = {
+    'fire & safety': [
+      'public/media/project-visuals/fire.png',
+      'public/media/project-visuals/fire 2.png'
+    ],
+    'electrical works': [
+      'public/media/project-visuals/electrical.png'
+    ],
+    'electrical': [
+      'public/media/project-visuals/electrical.png'
+    ]
+  };
+
+  // Unsplash fallbacks — used when no local image exists for a discipline
+  const unsplashFallbacks = {
+    'hvac':                'https://images.unsplash.com/photo-1631545806609-35a7a4a78b62?w=700&q=80&fit=crop',
+    'cold rooms & storage':'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80&fit=crop',
+    'cold room':           'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80&fit=crop',
+    'piping':              'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop',
+    'solar':               'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80&fit=crop',
+    'fabrication':         'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&q=80&fit=crop',
+    'water purification':  'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=700&q=80&fit=crop',
+    'default':             'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop'
+  };
+
+  // Per-discipline counter so each project in the same discipline gets a different image
+  const disciplineCounters = {};
+  const getProjectImg = (project) => {
+    if (project.thumbnail) return project.thumbnail;
+    const key = (project.discipline || '').toLowerCase().trim();
+    const pool = localProjectImgs[key];
+    if (pool && pool.length) {
+      disciplineCounters[key] = (disciplineCounters[key] || 0);
+      const img = pool[disciplineCounters[key] % pool.length];
+      disciplineCounters[key]++;
+      return img;
+    }
+    return unsplashFallbacks[key] || unsplashFallbacks['default'];
+  };
+
+  const projectCards = (home) => content.projects.map(project => {
+    const imgSrc = getProjectImg(project);
+    // Encode spaces in local paths; leave full URLs (http/https) untouched
+    const imgSrcEncoded = imgSrc.startsWith('http') ? imgSrc : imgSrc.replace(/ /g, '%20');
+    const imgTag = `<img class="proj-img" src="${imgSrcEncoded}" alt="${esc(project.discipline)}" loading="lazy">`;
+    return home
+      ? `<a class="proj-card" href="project.html?project=${encodeURIComponent(project.slug || slugify(project.title))}"><div class="proj-visual">${imgTag}</div><div class="proj-meta"><div class="proj-tb"><span>${esc(project.discipline)}</span><span>${esc(project.location)}</span></div><h3>${esc(project.title)}</h3><p>${esc(project.summary)}</p></div></a>`
+      : `<a class="card project-card" href="project.html?project=${encodeURIComponent(project.slug || slugify(project.title))}"><div class="project-visual">${imgTag}</div><div class="card-copy"><div class="meta"><span>${esc(project.discipline)}</span><span>${esc(project.location)}</span></div><h3>${esc(project.title)}</h3><p>${esc(project.summary)}</p></div></a>`;
+  }).join('');
 
   const teamCards = (home) => content.team.map(member => home
     ? `<div class="team-card"><div class="team-avatar"><div class="team-initials">${esc(member.initials)}</div></div><h4>${esc(member.name)}</h4><div class="role">${esc(member.role)}</div></div>`
