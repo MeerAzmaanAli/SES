@@ -1,0 +1,14 @@
+/* Shared glass layer: intentionally translucent so the backdrop blur remains visible. */
+header.scrolled{
+  background:linear-gradient(135deg,rgba(255,255,255,.76),rgba(245,247,251,.54))!important;
+  -webkit-backdrop-filter:blur(18px) saturate(155%);
+  backdrop-filter:blur(18px) saturate(155%);
+  border-bottom-color:rgba(255,255,255,.62)!important;
+  box-shadow:0 10px 32px rgba(18,21,26,.08),inset 0 1px 0 rgba(255,255,255,.75)!important;
+}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  header.scrolled{background:rgba(255,255,255,.92)!important}
+}
+
+/* The About hero is dark from the top, so its navigation needs contrast before scrolling. */
+.about-page header:not(.scrolled){background:linear-gradient(135deg,rgba(255,255,255,.88),rgba(247,249,252,.72));-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid rgba(255,255,255,.65);box-shadow:0 8px 26px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.82)}
