@@ -18,7 +18,8 @@
   const $ = (selector) => document.querySelector(selector);
   const setText = (selector, value) => { const el = $(selector); if (el && value) el.textContent = value; };
   const slugify = (value) => String(value).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|$)/g, '');
-  const page = location.pathname.split('/').pop() || 'index.html';
+  const routeKey = location.pathname.replace(/\/+$/, '').split('/').filter(Boolean).pop() || 'index';
+  const page = routeKey.endsWith('.html') ? routeKey : `${routeKey}.html`;
   const esc = (value) => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' })[char]);
 
   document.querySelectorAll('a[href^="tel:"]').forEach(el => { el.href = `tel:${content.company.phoneHref}`; el.textContent = content.company.phone; });
@@ -106,9 +107,10 @@
     // Encode spaces in local paths; leave full URLs (http/https) untouched
     const imgSrcEncoded = imgSrc.startsWith('http') ? imgSrc : imgSrc.replace(/ /g, '%20');
     const imgTag = `<img class="proj-img" src="${imgSrcEncoded}" alt="${esc(project.discipline)}" loading="lazy">`;
+    const projectHref = `/project/?project=${encodeURIComponent(project.slug || slugify(project.title))}`;
     return home
-      ? `<a class="proj-card" href="project.html?project=${encodeURIComponent(project.slug || slugify(project.title))}"><div class="proj-visual">${imgTag}</div><div class="proj-meta"><div class="proj-tb"><span>${esc(project.discipline)}</span><span>${esc(project.location)}</span></div><h3>${esc(project.title)}</h3><p>${esc(project.summary)}</p></div></a>`
-      : `<a class="card project-card" href="project.html?project=${encodeURIComponent(project.slug || slugify(project.title))}"><div class="project-visual">${imgTag}</div><div class="card-copy"><div class="meta"><span>${esc(project.discipline)}</span><span>${esc(project.location)}</span></div><h3>${esc(project.title)}</h3><p>${esc(project.summary)}</p></div></a>`;
+      ? `<a class="proj-card" href="${projectHref}"><div class="proj-visual">${imgTag}</div><div class="proj-meta"><div class="proj-tb"><span>${esc(project.discipline)}</span><span>${esc(project.location)}</span></div><h3>${esc(project.title)}</h3><p>${esc(project.summary)}</p></div></a>`
+      : `<a class="card project-card" href="${projectHref}"><div class="project-visual">${imgTag}</div><div class="card-copy"><div class="meta"><span>${esc(project.discipline)}</span><span>${esc(project.location)}</span></div><h3>${esc(project.title)}</h3><p>${esc(project.summary)}</p></div></a>`;
   }).join('');
 
   const teamPhotoMap = {
@@ -129,9 +131,19 @@
       : `<article class="card"><div class="team-avatar">${avatar}</div><div class="team-info"><h3>${esc(member.name)}</h3><div class="role">${esc(member.role)}</div><p class="team-bio">${esc(member.bio || '')}</p></div></article>`;
   }).join('');
 
+  const prettyRoute = (url) => {
+    if (!url || /^(?:[a-z]+:|#|\/\/)/i.test(url)) return url;
+    const match = url.match(/^(.*\/)?([^/?#]+)\.html([?#].*)?$/i);
+    if (!match) return url;
+    const file = match[2].toLowerCase();
+    const suffix = match[3] || '';
+    const path = file === 'index' ? '/' : `/${file.replace(/^blog-/, 'blog/')}/`;
+    return `${path}${suffix}`;
+  };
+
   const postCards = (home) => content.posts.map(post => home
-    ? `<a class="blog-card" href="${esc(post.url)}"><span class="blog-tag">${esc(post.tag)}</span><h3>${esc(post.title)}</h3><p>${esc(post.summary)}</p><div class="blog-date">Field note</div></a>`
-    : `<a class="card blog-card" href="${esc(post.url)}"><span class="tag">${esc(post.tag)}</span><h3>${esc(post.title)}</h3><p>${esc(post.summary)}</p><span class="read">Read field note →</span></a>`).join('');
+    ? `<a class="blog-card" href="${esc(prettyRoute(post.url))}"><span class="blog-tag">${esc(post.tag)}</span><h3>${esc(post.title)}</h3><p>${esc(post.summary)}</p><div class="blog-date">Field note</div></a>`
+    : `<a class="card blog-card" href="${esc(prettyRoute(post.url))}"><span class="tag">${esc(post.tag)}</span><h3>${esc(post.title)}</h3><p>${esc(post.summary)}</p><span class="read">Read field note →</span></a>`).join('');
 
   if (page === 'index.html') {
     const services = $('.svc-grid'); if (services) services.innerHTML = serviceCards(true);
