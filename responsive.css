@@ -40,7 +40,9 @@ img,svg,iframe{max-width:100%}
   .svc-grid,.team-grid{grid-template-columns:1fr!important}.team-card{max-width:360px}.team-avatar{aspect-ratio:1.2!important}
   .services-page .grid-3,.about-page .grid-2,.projects-page .grid-2,.clients-page .grid-3,.team-page .grid-3,.blog-page .grid-3{grid-template-columns:1fr!important}
   .services-page .card:nth-child(8),.team-page .card:first-child,.blog-page .blog-card:first-child{grid-column:auto!important}.team-page .card:first-child .team-avatar{height:300px!important}
-  .projects-page .project-card:nth-child(1){grid-row:auto!important}.projects-page .project-card:nth-child(1) .project-visual{height:245px!important}
+  .projects-page .project-card{grid-column:auto!important;grid-row:auto!important}
+  .projects-page .project-card:nth-child(5),.projects-page .project-card:nth-child(6){display:block!important}
+  .projects-page .project-card:nth-child(1) .project-visual{height:245px!important}
   .clients-page .client-mark:nth-child(2),.clients-page .client-mark:nth-child(5){transform:none!important}.clients-page .accent-panel{margin-top:45px!important}
   .form-row{grid-template-columns:1fr!important;gap:16px!important}.form-frame{padding:22px!important}.field input,.field select,.field textarea{font-size:16px!important}
   .map-frame iframe{height:220px!important}.info-row{align-items:flex-start!important}.info-text a{overflow-wrap:anywhere}
