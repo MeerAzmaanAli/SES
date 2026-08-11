@@ -111,9 +111,23 @@
       : `<a class="card project-card" href="project.html?project=${encodeURIComponent(project.slug || slugify(project.title))}"><div class="project-visual">${imgTag}</div><div class="card-copy"><div class="meta"><span>${esc(project.discipline)}</span><span>${esc(project.location)}</span></div><h3>${esc(project.title)}</h3><p>${esc(project.summary)}</p></div></a>`;
   }).join('');
 
-  const teamCards = (home) => content.team.map(member => home
-    ? `<div class="team-card"><div class="team-avatar"><div class="team-initials">${esc(member.initials)}</div></div><h4>${esc(member.name)}</h4><div class="role">${esc(member.role)}</div></div>`
-    : `<article class="card"><div class="team-avatar"><span>${esc(member.initials)}</span></div><div class="team-info"><h3>${esc(member.name)}</h3><div class="role">${esc(member.role)}</div></div></article>`).join('');
+  const teamPhotoMap = {
+    'irshad ali': 'public/media/team_pp/Irshad_Ali.jpeg',
+    'sarfaraz ali': 'public/media/team_pp/Sarfaraz_Ali.jpeg',
+    'md. zubair khan': 'public/media/team_pp/Md_Zubair_Khan.jpeg',
+    'meer bilal ali': 'public/media/team_pp/Meer_Bilal_Ali.jpeg',
+    'meer azmaan ali': 'public/media/team_pp/Meer_Azmaan_Ali.jpeg'
+  };
+  const getTeamPhoto = (member) => teamPhotoMap[(member.name || '').toLowerCase()] || teamPhotoMap[(member.initials || '').toLowerCase()] || '';
+  const teamCards = (home) => content.team.map(member => {
+    const photo = getTeamPhoto(member);
+    const avatar = photo
+      ? `<img src="${esc(photo)}" alt="${esc(member.name)}" loading="lazy" decoding="async">`
+      : `<div class="team-initials">${esc(member.initials)}</div>`;
+    return home
+      ? `<div class="team-card"><div class="team-avatar">${avatar}</div><h4>${esc(member.name)}</h4><div class="role">${esc(member.role)}</div></div>`
+      : `<article class="card"><div class="team-avatar">${avatar}</div><div class="team-info"><h3>${esc(member.name)}</h3><div class="role">${esc(member.role)}</div><p class="team-bio">${esc(member.bio || '')}</p></div></article>`;
+  }).join('');
 
   const postCards = (home) => content.posts.map(post => home
     ? `<a class="blog-card" href="${esc(post.url)}"><span class="blog-tag">${esc(post.tag)}</span><h3>${esc(post.title)}</h3><p>${esc(post.summary)}</p><div class="blog-date">Field note</div></a>`

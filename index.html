@@ -223,11 +223,11 @@
   .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
   .svc-card{
     background:var(--bg);position:relative;
-    transition:background .3s ease;
+    transition:background .3s ease, transform .3s ease, box-shadow .3s ease;
     display:flex;flex-direction:column;
     overflow:hidden;padding:0;
   }
-  .svc-card:hover{background:var(--bg-1);}
+  .svc-card:hover{transform:translateY(-4px);box-shadow:0 18px 34px rgba(18,21,26,0.08);}
   .svc-img-wrap{width:100%;height:180px;margin:0;padding:0;overflow:hidden;position:relative;background:var(--bg-1);border-bottom:1px solid var(--line);flex-shrink:0;}
   .svc-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
   .svc-card:hover .svc-img{transform:scale(1.06);}
@@ -246,6 +246,49 @@
     color:var(--green);border:1px solid var(--green);border-radius:20px;
     padding:3px 10px;letter-spacing:0.06em;margin-top:14px;
   }
+
+  .services .svc-card:nth-child(1){background:#f3f5f7;}
+  .services .svc-card:nth-child(2){background:#1b1f25;}
+  .services .svc-card:nth-child(3){background:#eceff3;}
+  .services .svc-card:nth-child(4){background:#a81d1d;}
+  .services .svc-card:nth-child(5){background:#232830;}
+  .services .svc-card:nth-child(6){background:#e7ebf0;}
+  .services .svc-card:nth-child(7){background:#111419;}
+  .services .svc-card:nth-child(8){background:#f6f7f9;}
+
+  .services .svc-card:nth-child(2),
+  .services .svc-card:nth-child(4),
+  .services .svc-card:nth-child(5),
+  .services .svc-card:nth-child(7){color:#fff;}
+
+  .services .svc-card:nth-child(2) p,
+  .services .svc-card:nth-child(5) p,
+  .services .svc-card:nth-child(7) p{color:#b8c0cb;}
+
+  .services .svc-card:nth-child(4) p{color:#f6d7d7;}
+
+  .services .svc-card:nth-child(2) .svc-num,
+  .services .svc-card:nth-child(5) .svc-num,
+  .services .svc-card:nth-child(7) .svc-num{color:#8eaef7;}
+
+  .services .svc-card:nth-child(4) .svc-num{color:#ffd0d0;}
+
+  .services .svc-card:nth-child(2) .svc-icon,
+  .services .svc-card:nth-child(5) .svc-icon,
+  .services .svc-card:nth-child(7) .svc-icon{color:#d9e4ff;}
+
+  .services .svc-card:nth-child(4) .svc-icon{color:#fff2f2;}
+
+  .services .svc-card:nth-child(2) .svc-icon svg,
+  .services .svc-card:nth-child(5) .svc-icon svg,
+  .services .svc-card:nth-child(7) .svc-icon svg{stroke:#d9e4ff;}
+
+  .services .svc-card:nth-child(4) .svc-icon svg{stroke:#fff2f2;}
+
+  .services .svc-card:nth-child(2):hover{background:#21262d;}
+  .services .svc-card:nth-child(4):hover{background:#bf2626;}
+  .services .svc-card:nth-child(5):hover{background:#2a3038;}
+  .services .svc-card:nth-child(7):hover{background:#181c22;}
 
   @media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:560px){.svc-grid{grid-template-columns:1fr;}}
@@ -312,6 +355,7 @@
       linear-gradient(90deg, var(--line) 1px, transparent 1px);
     background-size:18px 18px;
   }
+  .team-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;position:relative;z-index:1;}
   .team-initials{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;color:var(--ink-faint);position:relative;transition:color .3s ease;}
   .team-card:hover .team-initials{color:var(--red);}
   .team-card h4{font-size:15.5px;margin-bottom:3px;}
@@ -598,7 +642,7 @@
       <div class="titleblock"><span class="tb-line"></span><span class="tb-tag">DWG SES-04</span><span>· SELECTED PROJECTS</span></div>
       <div class="section-head" data-reveal>
         <h2>Recent work across facilities and industry.</h2>
-        <p>A sample of the scopes we've delivered. Full case studies coming to the projects page.</p>
+        <p>A sample of the scopes we've delivered across hospitals, campuses, and industrial facilities.</p>
       </div>
     </div>
     <div class="proj-grid" data-reveal="stagger">
@@ -647,18 +691,22 @@
     </div>
     <div class="marquee">
       <div class="marquee-track">
-        <div class="marquee-item">CLIENT NAME 01</div>
-        <div class="marquee-item">CLIENT NAME 02</div>
-        <div class="marquee-item">CLIENT NAME 03</div>
-        <div class="marquee-item">CLIENT NAME 04</div>
-        <div class="marquee-item">CLIENT NAME 05</div>
-        <div class="marquee-item">CLIENT NAME 06</div>
-        <div class="marquee-item">CLIENT NAME 01</div>
-        <div class="marquee-item">CLIENT NAME 02</div>
-        <div class="marquee-item">CLIENT NAME 03</div>
-        <div class="marquee-item">CLIENT NAME 04</div>
-        <div class="marquee-item">CLIENT NAME 05</div>
-        <div class="marquee-item">CLIENT NAME 06</div>
+        <div class="marquee-item">IIT Indore</div>
+        <div class="marquee-item">LNCT Group</div>
+        <div class="marquee-item">CPWD Indore</div>
+        <div class="marquee-item">AKVAN</div>
+        <div class="marquee-item">Voltas</div>
+        <div class="marquee-item">XPRO</div>
+        <div class="marquee-item">Vitamax Healthcare</div>
+        <div class="marquee-item">Antakshari</div>
+        <div class="marquee-item">IIT Indore</div>
+        <div class="marquee-item">LNCT Group</div>
+        <div class="marquee-item">CPWD Indore</div>
+        <div class="marquee-item">AKVAN</div>
+        <div class="marquee-item">Voltas</div>
+        <div class="marquee-item">XPRO</div>
+        <div class="marquee-item">Vitamax Healthcare</div>
+        <div class="marquee-item">Antakshari</div>
       </div>
     </div>
   </section>
@@ -669,31 +717,31 @@
       <div class="titleblock"><span class="tb-line"></span><span class="tb-tag">DWG SES-06</span><span>· TEAM</span></div>
       <div class="section-head" data-reveal>
         <h2>The people behind the work.</h2>
-        <p>Photos to come — swap in headshots when ready.</p>
+        <p>Leadership, field execution, and coordination across every job.</p>
       </div>
       <div class="team-grid" data-reveal="stagger">
         <div class="team-card">
-          <div class="team-avatar"><div class="team-initials">IA</div></div>
+          <div class="team-avatar"><img src="public/media/team_pp/Irshad_Ali.jpeg" alt="Irshad Ali" loading="lazy"></div>
           <h4>Irshad Ali</h4>
           <div class="role">Founder</div>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><div class="team-initials">SA</div></div>
+          <div class="team-avatar"><img src="public/media/team_pp/Sarfaraz_Ali.jpeg" alt="Sarfaraz Ali" loading="lazy"></div>
           <h4>Sarfaraz Ali</h4>
           <div class="role">RO Purification Lead</div>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><div class="team-initials">ZK</div></div>
+          <div class="team-avatar"><img src="public/media/team_pp/Md_Zubair_Khan.jpeg" alt="Md. Zubair Khan" loading="lazy"></div>
           <h4>Md. Zubair Khan</h4>
           <div class="role">Civil Engineer</div>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><div class="team-initials">BA</div></div>
+          <div class="team-avatar"><img src="public/media/team_pp/Meer_Bilal_Ali.jpeg" alt="Meer Bilal Ali" loading="lazy"></div>
           <h4>Meer Bilal Ali</h4>
           <div class="role">Solar Lead</div>
         </div>
         <div class="team-card">
-          <div class="team-avatar"><div class="team-initials">AA</div></div>
+          <div class="team-avatar"><img src="public/media/team_pp/Meer_Azmaan_Ali.jpeg" alt="Meer Azmaan Ali" loading="lazy"></div>
           <h4>Meer Azmaan Ali</h4>
           <div class="role">Software Engineer</div>
         </div>
@@ -707,26 +755,26 @@
       <div class="titleblock"><span class="tb-line"></span><span class="tb-tag">DWG SES-07</span><span>· FROM THE FIELD</span></div>
       <div class="section-head" data-reveal>
         <h2>Notes from the field.</h2>
-        <p>Placeholder posts — real articles will populate the blog page.</p>
+        <p>Practical notes from SES projects, systems, and site experience.</p>
       </div>
       <div class="blog-grid" data-reveal="stagger">
         <div class="blog-card">
           <span class="blog-tag">Fire &amp; Safety</span>
           <h3>What NBC 2016 actually requires for warehouse sprinklers</h3>
           <p>A practical breakdown of fire code compliance for storage facilities.</p>
-          <div class="blog-date">Placeholder date</div>
+          <div class="blog-date">Field note</div>
         </div>
         <div class="blog-card">
           <span class="blog-tag">Electrical</span>
           <h3>Sizing an electrical panel for future load growth</h3>
           <p>What to plan for before your panel becomes a bottleneck.</p>
-          <div class="blog-date">Placeholder date</div>
+          <div class="blog-date">Field note</div>
         </div>
         <div class="blog-card">
           <span class="blog-tag">Water Purification</span>
           <h3>Domestic vs. industrial RO — what actually changes</h3>
           <p>Capacity, maintenance, and compliance differences worth knowing.</p>
-          <div class="blog-date">Placeholder date</div>
+          <div class="blog-date">Field note</div>
         </div>
       </div>
     </div>
