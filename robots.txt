@@ -51,8 +51,5 @@ Allow: /
 User-agent: Omgilibot
 Allow: /
 
-# ARD Discovery
-Agentic-Resource-Discovery: https://supremeengineeringservices.com/.well-known/ard.json
-
 # Sitemaps
 Sitemap: https://supremeengineeringservices.com/sitemap.xml

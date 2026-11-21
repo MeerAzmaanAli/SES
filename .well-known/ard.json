@@ -1,33 +1,36 @@
 {
-  "$schema": "https://agenticresourcediscovery.org/spec/v1/schema.json",
-  "version": "1.0",
-  "name": "Supreme Engineering Services",
-  "description": "MEP contracting and consultancy firm in Indore, MP, specializing in Fire Safety, HVAC, Electrical, Cold Storage, and Water Purification.",
-  "url": "https://supremeengineeringservices.com",
-  "resources": [
-    {
-      "type": "llms-txt",
-      "url": "https://supremeengineeringservices.com/llms.txt",
-      "description": "Curated machine-readable overview of company services, disciplines, and technical guides."
-    },
-    {
-      "type": "sitemap",
-      "url": "https://supremeengineeringservices.com/sitemap.xml",
-      "description": "Canonical XML sitemap for web crawlers and indexers."
-    },
-    {
-      "type": "api-schema",
-      "url": "https://supremeengineeringservices.com/SES_content/site.json",
-      "description": "Structured JSON content data defining services, team members, client lists, and projects."
-    }
-  ],
-  "agentAccess": {
-    "crawling": "allowed",
-    "reading": "allowed",
-    "querying": "allowed"
+  "specVersion": "0.91",
+  "host": {
+    "displayName": "Supreme Engineering Services",
+    "identifier": "supremeengineeringservices.com"
   },
-  "contact": {
-    "email": "irshad@supremeengineeringservices.com",
-    "telephone": "+91 94253 20455"
-  }
+  "entries": [
+    {
+      "identifier": "urn:air:supremeengineeringservices.com:docs:llms-txt",
+      "displayName": "Supreme Engineering Services AI Knowledge Base",
+      "type": "text/markdown",
+      "url": "https://supremeengineeringservices.com/llms.txt",
+      "description": "Curated machine-readable overview of MEP engineering disciplines, delivered projects, and technical field notes.",
+      "representativeQueries": [
+        "What MEP contracting services does Supreme Engineering Services offer in Indore?",
+        "Who did the HVAC and Fire Fighting system at IIT Indore?",
+        "What are the NBC 2016 requirements for warehouse sprinklers?"
+      ],
+      "tags": ["mep", "hvac", "fire-safety", "electrical", "cold-rooms", "indore"],
+      "updatedAt": "2026-11-21T00:00:00Z"
+    },
+    {
+      "identifier": "urn:air:supremeengineeringservices.com:sitemap:xml",
+      "displayName": "Supreme Engineering Services Sitemap",
+      "type": "application/xml",
+      "url": "https://supremeengineeringservices.com/sitemap.xml",
+      "description": "Canonical XML sitemap indexing all website pages, technical blogs, and media assets.",
+      "representativeQueries": [
+        "Find the complete list of pages on supremeengineeringservices.com",
+        "Index Supreme Engineering Services projects and field notes"
+      ],
+      "tags": ["sitemap", "seo", "crawling"],
+      "updatedAt": "2026-11-21T00:00:00Z"
+    }
+  ]
 }
