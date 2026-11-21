@@ -1,1 +1,92 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="../route-loader.js" data-source="../error.html" data-base="../"></script></head><body></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Oops a Short Circuit — SES</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1318;--panel:#151a20;--panel-2:#1a2028;--ink:#f4f6f8;--muted:#aab3bf;--line:rgba(255,255,255,.09);--red:#a81d1d;--red2:#d42b2b;--accent:#8ec5ff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;background:
+      radial-gradient(circle at 20% 20%, rgba(168,29,29,.25), transparent 28%),
+      radial-gradient(circle at 80% 15%, rgba(142,197,255,.12), transparent 22%),
+      linear-gradient(145deg, #0b0f13, #11161c 46%, #161b22);color:var(--ink);font:16px/1.55 Inter,sans-serif;display:grid;place-items:center;padding:28px;overflow:hidden}
+    .grid{position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px, transparent 1px),linear-gradient(90deg,var(--line) 1px, transparent 1px);background-size:72px 72px;opacity:.36;mask-image:radial-gradient(circle at center, #000 40%, transparent 85%)}
+    .wrap{width:min(920px,100%);position:relative;z-index:1}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 24px 80px rgba(0,0,0,.35);backdrop-filter:blur(16px)}
+    .logo{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+    .logo-mark{width:44px;height:44px;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
+    .logo-text{font:700 22px 'Space Grotesk',sans-serif;letter-spacing:-.03em}
+    .logo-text span{color:var(--red2)}
+    .logo-sub{color:var(--muted);font:11px 'IBM Plex Mono',monospace;letter-spacing:.16em;margin-top:2px}
+    .content{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--accent);font:11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+    .eyebrow:before{content:'◆';color:var(--red2);font-size:9px}
+    h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(42px,6vw,72px);line-height:.95;letter-spacing:-.05em;max-width:10ch;margin-bottom:18px}
+    h1 span{color:var(--red2)}
+    p{max-width:560px;color:var(--muted);font-size:17px;margin-bottom:24px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn,.ghost{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;text-decoration:none;font:600 13px 'IBM Plex Mono',monospace;letter-spacing:.04em;transition:.2s ease}
+    .btn{background:var(--red);color:#fff;border:1px solid transparent}
+    .btn:hover{background:var(--red2);transform:translateY(-1px)}
+    .ghost{color:var(--ink);border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .ghost:hover{background:rgba(255,255,255,.07);transform:translateY(-1px)}
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));border:1px solid var(--line);border-radius:22px;padding:22px;min-height:320px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+    .panel:after{content:'';position:absolute;inset:auto -20% -25% auto;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle, rgba(212,43,43,.24), transparent 68%);filter:blur(8px)}
+    .status{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font:11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+    .circuit{margin-top:18px;flex:1;display:grid;place-items:center}
+    .circuit svg{width:min(100%,320px);height:auto}
+    .note{display:flex;gap:14px;align-items:flex-start;margin-top:18px;color:#cfd6df;font-size:14px}
+    .badge{flex:0 0 auto;width:12px;height:12px;border-radius:50%;background:var(--red2);box-shadow:0 0 0 6px rgba(212,43,43,.12);margin-top:6px}
+    @media (max-width:780px){.content{grid-template-columns:1fr}.panel{min-height:220px}.card{padding:22px}.logo-mark{width:38px;height:38px}}
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <main class="wrap">
+    <section class="card">
+      <div class="logo">
+        <img class="logo-mark" src="/public/media/logo.png" alt="SES logo">
+        <div>
+          <div class="logo-text">SES<span>.</span></div>
+          <div class="logo-sub">SUPREME ENGINEERING</div>
+        </div>
+      </div>
+      <div class="content">
+        <div>
+          <div class="eyebrow">FAULT STATE · EMERGENCY PAGE</div>
+          <h1>Oops, a short circuit.</h1>
+          <p>Something in the system tripped the breaker. There may be a leakage in the circuit, or the page is temporarily out of service. Reset the route and try again.</p>
+          <div class="actions">
+            <a class="btn" href="/">Back to home</a>
+            <a class="ghost" href="/services/">View services</a>
+          </div>
+          <div class="note"><span class="badge"></span><span>If you landed here from a broken link, the page has been isolated and the rest of the site should still be reachable.</span></div>
+        </div>
+        <div class="panel" aria-hidden="true">
+          <div class="status"><span>SES SAFE MODE</span><span>FAULT CODE 404</span></div>
+          <div class="circuit">
+            <svg viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M34 130H140" stroke="#8ec5ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 10"/>
+              <path d="M140 130H245" stroke="#f4f6f8" stroke-width="3" stroke-linecap="round"/>
+              <path d="M245 130H344" stroke="#a81d1d" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="140" cy="130" r="13" fill="#151a20" stroke="#8ec5ff" stroke-width="3"/>
+              <circle cx="245" cy="130" r="13" fill="#151a20" stroke="#f4f6f8" stroke-width="3"/>
+              <circle cx="344" cy="130" r="13" fill="#151a20" stroke="#a81d1d" stroke-width="3"/>
+              <path d="M334 120L354 140" stroke="#d42b2b" stroke-width="5" stroke-linecap="round"/>
+              <path d="M354 120L334 140" stroke="#d42b2b" stroke-width="5" stroke-linecap="round"/>
+              <path d="M76 78h50M300 78h44" stroke="#aab3bf" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+              <path d="M97 78v30" stroke="#aab3bf" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+              <path d="M322 78v30" stroke="#aab3bf" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+              <text x="26" y="220" fill="#aab3bf" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">SYSTEM ISOLATED</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
