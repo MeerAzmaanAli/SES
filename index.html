@@ -447,10 +447,16 @@
   .foot-col a{display:block;font-size:13.5px;color:var(--ink-muted);margin-bottom:10px;transition:color .25s ease;}
   .foot-col a:hover{color:var(--red);}
   .foot-bottom{
-    border-top:1px solid var(--line);padding-top:24px;
-    display:flex;justify-content:space-between;color:var(--ink-faint);
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;flex-wrap:wrap;gap:10px;
+    border-top:1px solid var(--line);padding-top:24px;padding-bottom:24px;
+    display:flex;justify-content:space-between;align-items:center;color:var(--ink-faint);
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;flex-wrap:wrap;gap:16px;
   }
+  .foot-brand-strip{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;}
+  .foot-brand-strip .foot-logo-mark{width:28px;height:25px;object-fit:contain;filter:grayscale(1) opacity(0.85);transition:filter .25s ease,transform .25s ease;}
+  .foot-brand-strip:hover .foot-logo-mark{filter:none;transform:scale(1.05);}
+  .foot-brand-strip .foot-brand-typo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.03em;color:var(--ink);display:inline-flex;align-items:baseline;}
+  .foot-brand-strip .foot-brand-typo span{color:var(--red);}
+  .foot-meta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
   @media(max-width:800px){.foot-grid{grid-template-columns:1fr 1fr;}}
 
   /* ---------- Responsive ---------- */
@@ -882,8 +888,14 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Supreme Engineering Services. All rights reserved.</span>
-      <span>DWG SES-00 · SITE MAP · REV B</span>
+      <a class="foot-brand-strip" href="/" aria-label="Supreme Engineering Services Home">
+        <img class="foot-logo-mark" src="/public/media/logo.png" alt="Supreme Engineering Services (SES) logo" loading="lazy">
+        <span class="foot-brand-typo">SES<span>.</span></span>
+      </a>
+      <div class="foot-meta">
+        <span>© 2026 Supreme Engineering Services. All rights reserved.</span>
+        <span>DWG SES-00 · SITE MAP · REV B</span>
+      </div>
     </div>
   </div>
 </footer>
