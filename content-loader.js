@@ -53,10 +53,10 @@
   };
 
   const serviceLinks = {
-    'fire & safety': 'services/fire-fighting/',
-    'hvac': 'services/hvac/',
-    'cold rooms & storage': 'services/cold-rooms/',
-    'electrical works': 'services/electrical/'
+    'fire & safety': '/services/fire-fighting/',
+    'hvac': '/services/hvac/',
+    'cold rooms & storage': '/services/cold-rooms/',
+    'electrical works': '/services/electrical/'
   };
 
   const serviceCards = (home) => content.services.map((service, index) => {
