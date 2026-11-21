@@ -141,9 +141,30 @@
     return `${path}${suffix}`;
   };
 
-  const postCards = (home) => content.posts.map(post => home
-    ? `<a class="blog-card" href="${esc(prettyRoute(post.url))}"><span class="blog-tag">${esc(post.tag)}</span><h3>${esc(post.title)}</h3><p>${esc(post.summary)}</p><div class="blog-date">Field note</div></a>`
-    : `<a class="card blog-card" href="${esc(prettyRoute(post.url))}"><span class="tag">${esc(post.tag)}</span><h3>${esc(post.title)}</h3><p>${esc(post.summary)}</p><span class="read">Read field note →</span></a>`).join('');
+  const postCards = (home) => content.posts.map(post => {
+    const postUrl = esc(prettyRoute(post.url));
+    const postImg = post.image ? `<div class="blog-visual"><img src="${esc(post.image)}" alt="${esc(post.title)}" loading="lazy"></div>` : '';
+    return home
+      ? `<a class="blog-card" href="${postUrl}">${postImg}<span class="blog-tag">${esc(post.tag)}</span><h3>${esc(post.title)}</h3><p>${esc(post.summary)}</p><div class="blog-date">${esc(post.readTime || 'Field note')}</div></a>`
+      : `<a class="card blog-card" href="${postUrl}">${postImg}<span class="tag">${esc(post.tag)}</span><h3>${esc(post.title)}</h3><p>${esc(post.summary)}</p><span class="read">Read field note →</span></a>`;
+  }).join('');
+
+  // SEO & Structured Data injection from content.seo if present
+  if (content.seo) {
+    if (content.seo.defaultDescription && !$('meta[name="description"]')) {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = content.seo.defaultDescription;
+      document.head.appendChild(meta);
+    }
+    if (content.seo.structuredData && !$('script[type="application/ld+json"][data-injected="ses"]')) {
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.dataset.injected = 'ses';
+      script.textContent = JSON.stringify(content.seo.structuredData);
+      document.head.appendChild(script);
+    }
+  }
 
   if (page === 'index.html') {
     const services = $('.svc-grid'); if (services) services.innerHTML = serviceCards(true);

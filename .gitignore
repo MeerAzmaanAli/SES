@@ -2,3 +2,5 @@
 Thumbs.db
 .venv/
 *.log
+public_html/
+graphify-out/
