@@ -52,10 +52,25 @@
     return defaultImages[index % defaultImages.length];
   };
 
+  const serviceLinks = {
+    'fire & safety': 'services/fire-fighting/',
+    'hvac': 'services/hvac/',
+    'cold rooms & storage': 'services/cold-rooms/',
+    'electrical works': 'services/electrical/'
+  };
+
   const serviceCards = (home) => content.services.map((service, index) => {
     const imgSrc = getServiceImg(service, index);
+    const link = serviceLinks[(service.name || '').toLowerCase().trim()];
     const imgHtml = `<div class="svc-img-wrap"><img class="svc-img" src="${esc(imgSrc)}" alt="${esc(service.name)}" loading="lazy"></div>`;
-    const bodyHtml = `<div class="svc-body"><div class="svc-top"><div class="svc-num">${String(index + 1).padStart(2, '0')}</div><div class="svc-icon" aria-hidden="true">${esc(service.icon)}</div></div><h3>${esc(service.name)}${!home && service.status ? ` <span class="tag">${esc(service.status)}</span>` : ''}</h3><p>${esc(service.summary)}</p></div>`;
+    const actionHtml = link ? `<div style="margin-top:0.8rem;"><span style="color:var(--blue);font-weight:600;font-size:0.9rem;">Explore discipline →</span></div>` : '';
+    const bodyHtml = `<div class="svc-body"><div class="svc-top"><div class="svc-num">${String(index + 1).padStart(2, '0')}</div><div class="svc-icon" aria-hidden="true">${esc(service.icon)}</div></div><h3>${esc(service.name)}${!home && service.status ? ` <span class="tag">${esc(service.status)}</span>` : ''}</h3><p>${esc(service.summary)}</p>${actionHtml}</div>`;
+    
+    if (link) {
+      return home
+        ? `<a class="svc-card" href="${link}">${imgHtml}${bodyHtml}</a>`
+        : `<a class="card svc-card" href="${link}">${imgHtml}${bodyHtml}</a>`;
+    }
     return home
       ? `<div class="svc-card">${imgHtml}${bodyHtml}</div>`
       : `<article class="card svc-card">${imgHtml}${bodyHtml}</article>`;

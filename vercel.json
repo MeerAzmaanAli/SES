@@ -87,6 +87,10 @@
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/services/", "destination": "/services/index.html" },
+    { "source": "/services/fire-fighting/", "destination": "/services/fire-fighting/index.html" },
+    { "source": "/services/hvac/", "destination": "/services/hvac/index.html" },
+    { "source": "/services/cold-rooms/", "destination": "/services/cold-rooms/index.html" },
+    { "source": "/services/electrical/", "destination": "/services/electrical/index.html" },
     { "source": "/projects/", "destination": "/projects/index.html" },
     { "source": "/project/", "destination": "/project/index.html" },
     { "source": "/about/", "destination": "/about/index.html" },

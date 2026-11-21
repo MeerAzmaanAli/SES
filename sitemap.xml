@@ -12,7 +12,7 @@
   <url>
     <loc>https://supremeengineeringservices.com/services/</loc>
     <lastmod>2026-11-21</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
@@ -44,6 +44,48 @@
     <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- High-Intent Dedicated Service Pages -->
+  <url>
+    <loc>https://supremeengineeringservices.com/services/fire-fighting/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://supremeengineeringservices.com/public/media/services_images/fire.jpeg</image:loc>
+      <image:title>Fire Fighting &amp; Suppression Systems Contractor Indore</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supremeengineeringservices.com/services/hvac/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://supremeengineeringservices.com/public/media/services_images/hvac.jpeg</image:loc>
+      <image:title>HVAC &amp; Cleanroom Contractors Indore MP</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supremeengineeringservices.com/services/cold-rooms/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://supremeengineeringservices.com/public/media/services_images/coldroom.jpeg</image:loc>
+      <image:title>Cold Storage &amp; PUFF Panel Contractors Indore</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://supremeengineeringservices.com/services/electrical/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://supremeengineeringservices.com/public/media/services_images/electrical.jpeg</image:loc>
+      <image:title>Electrical Panel &amp; HT LT Distribution Contractors Indore</image:title>
+    </image:image>
   </url>
 
   <!-- Blog / Technical Field Notes -->
