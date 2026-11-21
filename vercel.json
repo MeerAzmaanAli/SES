@@ -86,53 +86,38 @@
   ],
   "redirects": [
     {
-      "source": "/services/(?i)hvac/?",
+      "source": "/services/HVAC/",
       "destination": "/services/hvac/",
       "permanent": true
     },
     {
-      "source": "/services/(?i)fire-fighting/?",
+      "source": "/services/Hvac/",
+      "destination": "/services/hvac/",
+      "permanent": true
+    },
+    {
+      "source": "/services/Fire-Fighting/",
       "destination": "/services/fire-fighting/",
       "permanent": true
     },
     {
-      "source": "/services/(?i)cold-rooms/?",
+      "source": "/services/Cold-Rooms/",
       "destination": "/services/cold-rooms/",
       "permanent": true
     },
     {
-      "source": "/services/(?i)electrical/?",
+      "source": "/services/Electrical/",
       "destination": "/services/electrical/",
-      "permanent": true
-    },
-    {
-      "source": "/blog/(?i)hvac/?",
-      "destination": "/blog/hvac/",
-      "permanent": true
-    },
-    {
-      "source": "/blog/(?i)fire-safety/?",
-      "destination": "/blog/fire-safety/",
-      "permanent": true
-    },
-    {
-      "source": "/blog/(?i)cold-chain/?",
-      "destination": "/blog/cold-chain/",
-      "permanent": true
-    },
-    {
-      "source": "/blog/(?i)what-is-mep-engineering/?",
-      "destination": "/blog/what-is-mep-engineering/",
       "permanent": true
     }
   ],
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/services/", "destination": "/services/index.html" },
-    { "source": "/services/(?i)fire-fighting/", "destination": "/services/fire-fighting/index.html" },
-    { "source": "/services/(?i)hvac/", "destination": "/services/hvac/index.html" },
-    { "source": "/services/(?i)cold-rooms/", "destination": "/services/cold-rooms/index.html" },
-    { "source": "/services/(?i)electrical/", "destination": "/services/electrical/index.html" },
+    { "source": "/services/fire-fighting/", "destination": "/services/fire-fighting/index.html" },
+    { "source": "/services/hvac/", "destination": "/services/hvac/index.html" },
+    { "source": "/services/cold-rooms/", "destination": "/services/cold-rooms/index.html" },
+    { "source": "/services/electrical/", "destination": "/services/electrical/index.html" },
     { "source": "/projects/", "destination": "/projects/index.html" },
     { "source": "/project/", "destination": "/project/index.html" },
     { "source": "/about/", "destination": "/about/index.html" },
@@ -140,10 +125,10 @@
     { "source": "/clients/", "destination": "/clients/index.html" },
     { "source": "/contact/", "destination": "/contact/index.html" },
     { "source": "/blog/", "destination": "/blog/index.html" },
-    { "source": "/blog/(?i)what-is-mep-engineering/", "destination": "/blog/what-is-mep-engineering/index.html" },
-    { "source": "/blog/(?i)fire-safety/", "destination": "/blog/fire-safety/index.html" },
-    { "source": "/blog/(?i)hvac/", "destination": "/blog/hvac/index.html" },
-    { "source": "/blog/(?i)cold-chain/", "destination": "/blog/cold-chain/index.html" },
+    { "source": "/blog/what-is-mep-engineering/", "destination": "/blog/what-is-mep-engineering/index.html" },
+    { "source": "/blog/fire-safety/", "destination": "/blog/fire-safety/index.html" },
+    { "source": "/blog/hvac/", "destination": "/blog/hvac/index.html" },
+    { "source": "/blog/cold-chain/", "destination": "/blog/cold-chain/index.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/llms.txt", "destination": "/llms.txt" },
