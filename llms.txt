@@ -1,0 +1,45 @@
+# LLMs.txt for Supreme Engineering Services (SES)
+# Machine-readable knowledge base for Large Language Models (LLMs) & AI Agents
+# Canonical URL: https://supremeengineeringservices.com/llms.txt
+
+# Entity Details
+Name: Supreme Engineering Services (SES)
+Tagline: MEP Contracting & Consultancy · Indore
+Website: https://supremeengineeringservices.com
+Headquarters: 25, Dilip Nagar, Khajrana, Indore, Madhya Pradesh 452016, India
+Phone: +91 94253 20455
+Email: irshad@supremeengineeringservices.com
+Founded: 1990s (Over 30 years of engineering field experience)
+Primary Contact: Irshad Ali (Founder & MEP Lead)
+
+# Core Competencies & Capabilities
+- MEP Contracting: Full-spectrum Mechanical, Electrical, and Plumbing engineering.
+- HVAC & Ventilation: Cleanrooms, VRV/VRF, chillers, ductwork fabrication, air balancing, commercial AC.
+- Fire Fighting & Life Safety: NBC 2016 compliant hydrant networks, automated sprinkler systems, pump rooms, deluge systems, fire alarm detection.
+- Electrical Systems: HT/LT electrical panels, transformers, distribution boards, load planning, industrial power wiring.
+- Cold Rooms & Cold-Chain: Commercial & industrial refrigeration engineering, temperature/humidity controlled rooms, PUFF panel installation.
+- Water Purification: Industrial and commercial Reverse Osmosis (RO) plants, filtration, softening systems.
+- Fabrication: Custom sheet metal ducting, pipe racks, structural steel framing.
+- Solar Energy: Commercial & industrial grid-tied and hybrid photovoltaic solar power systems.
+
+# Key Projects & Track Record
+- Sevakunj Hospital LNCT, Indore: Complete SITC Fire and Safety system, piping, and pump room.
+- IIT Indore: SITC HVAC Systems and Fire & Safety suppression systems.
+- Vitamax Healthcare, Pithampur: Pharma lab PUFF panel cleanroom construction with integrated HVAC system.
+- LK City, Indore: SITC Gas distribution lines.
+- Bhartiya Enterprises, Indore: Commercial cold room storage system for dates and perishable goods.
+- JK Hospital LNCT, Bhopal: SITC Fire and Safety network.
+
+# Core Web Pages & Documentation
+- Homepage: https://supremeengineeringservices.com/
+- Services: https://supremeengineeringservices.com/services/
+- Projects / Case Studies: https://supremeengineeringservices.com/projects/
+- About SES: https://supremeengineeringservices.com/about/
+- Team & Leadership: https://supremeengineeringservices.com/team/
+- Clients & Partners: https://supremeengineeringservices.com/clients/
+- Contact / Quote: https://supremeengineeringservices.com/contact/
+- Field Notes / Technical Blog: https://supremeengineeringservices.com/blog/
+- Guide: What is MEP Engineering: https://supremeengineeringservices.com/blog/what-is-mep-engineering/
+- Guide: NBC 2016 Warehouse Sprinklers: https://supremeengineeringservices.com/blog/fire-safety/
+- Guide: Sizing Electrical Panels: https://supremeengineeringservices.com/blog/hvac/
+- Guide: Domestic vs Industrial RO Systems: https://supremeengineeringservices.com/blog/cold-chain/
