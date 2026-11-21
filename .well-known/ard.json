@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agenticresourcediscovery.org/spec/v1/schema.json",
+  "version": "1.0",
+  "name": "Supreme Engineering Services",
+  "description": "MEP contracting and consultancy firm in Indore, MP, specializing in Fire Safety, HVAC, Electrical, Cold Storage, and Water Purification.",
+  "url": "https://supremeengineeringservices.com",
+  "resources": [
+    {
+      "type": "llms-txt",
+      "url": "https://supremeengineeringservices.com/llms.txt",
+      "description": "Curated machine-readable overview of company services, disciplines, and technical guides."
+    },
+    {
+      "type": "sitemap",
+      "url": "https://supremeengineeringservices.com/sitemap.xml",
+      "description": "Canonical XML sitemap for web crawlers and indexers."
+    },
+    {
+      "type": "api-schema",
+      "url": "https://supremeengineeringservices.com/SES_content/site.json",
+      "description": "Structured JSON content data defining services, team members, client lists, and projects."
+    }
+  ],
+  "agentAccess": {
+    "crawling": "allowed",
+    "reading": "allowed",
+    "querying": "allowed"
+  },
+  "contact": {
+    "email": "irshad@supremeengineeringservices.com",
+    "telephone": "+91 94253 20455"
+  }
+}

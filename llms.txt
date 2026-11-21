@@ -1,45 +1,45 @@
-# LLMs.txt for Supreme Engineering Services (SES)
-# Machine-readable knowledge base for Large Language Models (LLMs) & AI Agents
-# Canonical URL: https://supremeengineeringservices.com/llms.txt
+# Supreme Engineering Services
 
-# Entity Details
-Name: Supreme Engineering Services (SES)
-Tagline: MEP Contracting & Consultancy · Indore
-Website: https://supremeengineeringservices.com
-Headquarters: 25, Dilip Nagar, Khajrana, Indore, Madhya Pradesh 452016, India
-Phone: +91 94253 20455
-Email: irshad@supremeengineeringservices.com
-Founded: 1990s (Over 30 years of engineering field experience)
-Primary Contact: Irshad Ali (Founder & MEP Lead)
+> Supreme Engineering Services (SES) provides turnkey MEP (Mechanical, Electrical, and Plumbing) engineering contracting and consultancy based in Indore, Madhya Pradesh, India. Specializing in Fire Fighting & Safety, HVAC, Cold Rooms, Piping, and Electrical Systems for commercial and industrial facilities.
 
-# Core Competencies & Capabilities
-- MEP Contracting: Full-spectrum Mechanical, Electrical, and Plumbing engineering.
-- HVAC & Ventilation: Cleanrooms, VRV/VRF, chillers, ductwork fabrication, air balancing, commercial AC.
-- Fire Fighting & Life Safety: NBC 2016 compliant hydrant networks, automated sprinkler systems, pump rooms, deluge systems, fire alarm detection.
-- Electrical Systems: HT/LT electrical panels, transformers, distribution boards, load planning, industrial power wiring.
-- Cold Rooms & Cold-Chain: Commercial & industrial refrigeration engineering, temperature/humidity controlled rooms, PUFF panel installation.
-- Water Purification: Industrial and commercial Reverse Osmosis (RO) plants, filtration, softening systems.
-- Fabrication: Custom sheet metal ducting, pipe racks, structural steel framing.
-- Solar Energy: Commercial & industrial grid-tied and hybrid photovoltaic solar power systems.
+## Overview
 
-# Key Projects & Track Record
-- Sevakunj Hospital LNCT, Indore: Complete SITC Fire and Safety system, piping, and pump room.
-- IIT Indore: SITC HVAC Systems and Fire & Safety suppression systems.
-- Vitamax Healthcare, Pithampur: Pharma lab PUFF panel cleanroom construction with integrated HVAC system.
-- LK City, Indore: SITC Gas distribution lines.
-- Bhartiya Enterprises, Indore: Commercial cold room storage system for dates and perishable goods.
-- JK Hospital LNCT, Bhopal: SITC Fire and Safety network.
+Founded with over 30 years of field engineering expertise, Supreme Engineering Services manages full-scope MEP projects from design intent and procurement to in-house fabrication, site installation, and code-compliant commissioning.
 
-# Core Web Pages & Documentation
-- Homepage: https://supremeengineeringservices.com/
-- Services: https://supremeengineeringservices.com/services/
-- Projects / Case Studies: https://supremeengineeringservices.com/projects/
-- About SES: https://supremeengineeringservices.com/about/
-- Team & Leadership: https://supremeengineeringservices.com/team/
-- Clients & Partners: https://supremeengineeringservices.com/clients/
-- Contact / Quote: https://supremeengineeringservices.com/contact/
-- Field Notes / Technical Blog: https://supremeengineeringservices.com/blog/
-- Guide: What is MEP Engineering: https://supremeengineeringservices.com/blog/what-is-mep-engineering/
-- Guide: NBC 2016 Warehouse Sprinklers: https://supremeengineeringservices.com/blog/fire-safety/
-- Guide: Sizing Electrical Panels: https://supremeengineeringservices.com/blog/hvac/
-- Guide: Domestic vs Industrial RO Systems: https://supremeengineeringservices.com/blog/cold-chain/
+- Headquarters: 25, Dilip Nagar, Khajrana, Indore, Madhya Pradesh 452016, India
+- Contact: +91 94253 20455
+- Email: irshad@supremeengineeringservices.com
+- Primary Domain: https://supremeengineeringservices.com
+
+## Core Capabilities
+
+- [Services](https://supremeengineeringservices.com/services/): Comprehensive overview of eight engineering disciplines.
+- Fire & Safety: National Building Code (NBC 2016) compliant hydrant networks, automated sprinkler systems, pump rooms, and deluge systems.
+- HVAC & Ventilation: Cleanroom positive/negative pressure cascades, chillers, VRV/VRF systems, and custom ductwork fabrication.
+- Electrical Systems: HT/LT electrical panels, transformer installations, load balancing, and industrial distribution.
+- Cold Rooms & Storage: Controlled atmosphere PUFF panel cold storage engineering and industrial refrigeration.
+- Water Purification: Commercial and industrial Reverse Osmosis (RO) plants, softening, and filtration.
+- Fabrication: Precision ducting, pipe bridges, and custom structural steel frameworks.
+- Solar Power: Industrial and commercial grid-tied and hybrid photovoltaic solar solutions.
+
+## Delivered Projects
+
+- [Projects Portfolio](https://supremeengineeringservices.com/projects/): Verified project delivery log across hospitals, universities, and industrial parks.
+- SITC Fire and Safety System at Sevakunj Hospital LNCT, Indore
+- SITC HVAC and Fire Suppression Systems at IIT Indore
+- Pharma Lab PUFF Panel & HVAC System at Vitamax Healthcare, Pithampur
+- Industrial Gas Line SITC at LK City, Indore
+- Perishable Cold Room Storage System at Bhartiya Enterprises, Indore
+- SITC Fire and Safety System at JK Hospital LNCT, Bhopal
+
+## Technical Documentation & Field Notes
+
+- [Field Notes / Blog](https://supremeengineeringservices.com/blog/): Practical engineering insights and regulatory breakdowns.
+- [What is MEP Engineering?](https://supremeengineeringservices.com/blog/what-is-mep-engineering/): Architectural coordination, MEP disciplines, and clash prevention on construction sites.
+- [Warehouse Sprinklers under NBC 2016](https://supremeengineeringservices.com/blog/fire-safety/): Fire protection compliance standards for industrial storage facilities.
+- [Electrical Panel Sizing](https://supremeengineeringservices.com/blog/hvac/): Load growth calculations and distribution planning.
+- [Industrial vs Domestic RO](https://supremeengineeringservices.com/blog/cold-chain/): Filtration volume, membrane flux, and pre-treatment requirements.
+
+## Contact & Quotes
+
+- [Request a Quote](https://supremeengineeringservices.com/contact/): Submit site drawings or RFPs for technical evaluation.
