@@ -77,7 +77,7 @@
 
   // Unsplash fallbacks — used when no local image exists for a discipline
   const unsplashFallbacks = {
-    'hvac':                'https://images.unsplash.com/photo-1631545806609-35a7a4a78b62?w=700&q=80&fit=crop',
+    'hvac':                'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&q=80&fit=crop',
     'cold rooms & storage':'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80&fit=crop',
     'cold room':           'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80&fit=crop',
     'piping':              'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop',

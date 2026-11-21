@@ -100,8 +100,9 @@ nav {
 }
 
 .logo-mark {
-    width: 34px;
-    height: 34px
+    width: 38px;
+    height: 34px;
+    object-fit: contain
 }
 
 .logo-text {
