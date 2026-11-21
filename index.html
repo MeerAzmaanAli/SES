@@ -446,6 +446,48 @@
   .foot-col h5{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:16px;}
   .foot-col a{display:block;font-size:13.5px;color:var(--ink-muted);margin-bottom:10px;transition:color .25s ease;}
   .foot-col a:hover{color:var(--red);}
+  /* Big Impact Brand Section (Antigravity Style) */
+  .brand-marquee-section {
+    padding: 70px 0 24px;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+  }
+  .brand-hero-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 4vw, 42px);
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .brand-hero-logo {
+    width: clamp(70px, 15vw, 190px);
+    height: auto;
+    max-height: clamp(62px, 13.5vw, 170px);
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 10px 24px rgba(18,21,26,0.06));
+  }
+  .brand-hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(68px, 18vw, 240px);
+    line-height: 0.88;
+    letter-spacing: -0.05em;
+    color: var(--ink);
+    margin: 0;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: baseline;
+  }
+  .brand-hero-title span {
+    color: var(--red);
+  }
   .foot-bottom{
     border-top:1px solid var(--line);padding-top:24px;padding-bottom:24px;
     display:flex;justify-content:space-between;align-items:center;color:var(--ink-faint);
@@ -851,6 +893,14 @@
           <span>25, Dilip Nagar, Khajrana, Indore, MP 452016</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Big Impact SES Branding (Antigravity Style) -->
+  <section class="brand-marquee-section" aria-label="Supreme Engineering Services brand watermark">
+    <div class="brand-hero-wrap">
+      <img class="brand-hero-logo" src="/public/media/logo.png" alt="Supreme Engineering Services (SES) official logo" loading="lazy">
+      <h2 class="brand-hero-title">SES<span>.</span></h2>
     </div>
   </section>
 
